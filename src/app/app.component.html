@@ -1,7 +1,17 @@
 <div class="outer">
   <div class="toppanel">
-    <a routerLinkActive="active" routerLink="/friends-list" class="button button_round"><i class="fa fa-address-book"></i></a>
-    <a routerLinkActive="active" routerLink="/favorites" class="button button_round"><i class="fa fa-heart"></i></a>
+    <a
+      routerLinkActive="active"
+      routerLink="/friends-list"
+      class="button button_round effect-boris"
+      (click)="effectService.onBorisClick($event.target)"
+    ><i class="fa fa-address-book"></i></a>
+    <a
+      routerLinkActive="active"
+      routerLink="/favorites"
+      class="button button_round effect-boris"
+      (click)="effectService.onBorisClick($event.target)"
+    ><i class="fa fa-heart"></i></a>
     <app-search></app-search>
   </div>
   <div class="header">

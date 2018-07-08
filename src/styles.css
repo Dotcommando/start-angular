@@ -91,7 +91,6 @@ ul.friends-list {
   list-style-type:none;
 }
 ul.friends-list>li {
-  overflow:hidden;
   display:flex;
   position:relative;
   justify-content:space-between;
@@ -135,5 +134,38 @@ ul.friends-list>li span {
 @media (max-width: 560px) {
   h1 {
     font-size:28px;
+  }
+}
+
+/* Эффект «Boris» */
+.effect-boris:after {
+  content:"";
+  position:absolute;
+  top:50%;
+  left:50%;
+  margin:-35px 0 0 -35px;
+  width:70px;
+  height:70px;
+  border-radius:50%;
+  opacity:0;
+  pointer-events:none;
+}
+.effect-boris:after {
+  background:rgba(255,255,255,0.3);
+}
+.effect-boris.effect-boris_click:after {
+  animation:effect-boris 0.3s forwards;
+}
+
+@keyframes effect-boris {
+  0% {
+    transform:scale3d(0.3, 0.3, 1);
+  }
+  25%, 50% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+    transform:scale3d(1.2, 1.2, 1);
   }
 }

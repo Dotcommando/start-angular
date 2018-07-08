@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {
+  EffectService,
   LocalStorageService,
   StarsService
 } from 'services';
@@ -17,7 +18,8 @@ export class StarsComponent implements OnInit {
 
   constructor(
     private localStorageService: LocalStorageService,
-    private starsService: StarsService
+    private starsService: StarsService,
+    public effectService: EffectService
   ) { }
 
   setStars(index: number): void {

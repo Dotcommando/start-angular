@@ -28,7 +28,7 @@ export class SearchComponent implements OnInit {
   }
 
   constructor(
-    private transferVarsService: TransferVarsService
+    public transferVarsService: TransferVarsService
   ) { }
 
   ngOnInit() { }

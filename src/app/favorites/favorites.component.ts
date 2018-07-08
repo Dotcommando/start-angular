@@ -6,18 +6,39 @@ import {
   TransferVarsService,
   LocalStorageService
 } from 'services';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition
+} from '@angular/animations';
 
 @Component({
   selector: 'app-favorites',
   templateUrl: './favorites.component.html',
-  styleUrls: ['./favorites.component.css']
+  styleUrls: ['./favorites.component.css'],
+  animations: [
+    trigger('flyInOut', [
+      state('in', style({ opacity: 1 })),
+      transition('void => *', [
+        style({ opacity: 0}),
+        animate('.2s ease-in')
+      ]),
+      transition('* => void', [
+        animate('.2s ease-in', style({ opacity: 0}))
+      ])
+    ])
+  ]
 })
 export class FavoritesComponent implements OnInit, OnDestroy {
 
   title = 'Избранные';
   friends: Friend[] = [];
   favoriteFriends: Friend[] = [];
+  friendsWithDelay: Friend[] = [];
   subscription: Subscription;
+  next = 0;
 
   constructor(
     private friendsService: FriendsService,
@@ -31,6 +52,7 @@ export class FavoritesComponent implements OnInit, OnDestroy {
         this.friends = result;
         this.fillFavoriteFriends();
         this.transferVarsService.setFriends(this.favoriteFriends);
+        this.doNext();
       });
   }
 
@@ -47,6 +69,12 @@ export class FavoritesComponent implements OnInit, OnDestroy {
 
     });
 
+  }
+
+  doNext(): void {
+    if (this.next < this.favoriteFriends.length) {
+      this.friendsWithDelay.push(this.favoriteFriends[this.next++]);
+    }
   }
 
   ngOnInit() {

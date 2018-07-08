@@ -1,5 +1,9 @@
   <ul class="friends-list">
-    <li *ngFor="let friend of favoriteFriends">
+    <li
+      *ngFor="let friend of friendsWithDelay"
+      (@flyInOut.done)="doNext()"
+      [@flyInOut]="'in'"
+    >
       <span class="friend-name"><a routerLink="/detail/{{friend._id}}">{{friend.name}}</a></span>
       <span><app-stars [id]="friend._id"></app-stars></span>
     </li>

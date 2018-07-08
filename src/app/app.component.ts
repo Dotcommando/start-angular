@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { TransferVarsService } from 'services';
+import {
+  TransferVarsService,
+  EffectService
+} from 'services';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +13,9 @@ export class AppComponent {
 
   title = 'Менеджер контактов';
 
-  constructor(public transferVarsService: TransferVarsService) {}
+  constructor(
+    public transferVarsService: TransferVarsService,
+    public effectService: EffectService
+  ) {}
 
 }
