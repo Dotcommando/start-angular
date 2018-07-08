@@ -26,6 +26,7 @@ export class FriendsListComponent implements OnInit, OnDestroy {
     this.subscription = this.friendsService.getFriends()
       .subscribe(result => {
         this.friends = result;
+        this.transferVarsService.setFriends(result);
       });
   }
 

@@ -43,6 +43,7 @@ export class FriendDetailComponent implements OnInit, OnDestroy {
     this.subscriptions.push(
       this.friendsService.getFriends().subscribe(result => {
         this.friends = result;
+        this.transferVarsService.setFriends(result);
         this.id = this.route.snapshot.paramMap.get('id');
         this.selectFriend(this.id);
         const friendData = this.readFromStorage(this.id);

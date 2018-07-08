@@ -17,7 +17,9 @@
     ],
     "baseUrl": "./src",
     "paths": {
-      "services": ["app/services"]
+      "services": ["app/services"],
+      "directives": ["app/directives"],
+      "pipes": ["app/pipes"]
     }
   }
 }
