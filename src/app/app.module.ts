@@ -9,20 +9,31 @@ import { FriendDetailComponent } from './friend-detail/friend-detail.component';
 import { FriendsListComponent } from './friends-list/friends-list.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { StarsComponent } from './stars/stars.component';
+import { SearchComponent } from './search/search.component';
+
+import { SearchPipe } from 'pipes';
+
+import { SearchDirective } from 'directives';
 
 @NgModule({
   declarations: [
     AppComponent,
     FriendDetailComponent,
     FriendsListComponent,
+    StarsComponent,
     FavoritesComponent,
-    StarsComponent
+    SearchComponent,
+    SearchPipe,
+    SearchDirective
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
     AppRoutingModule
+  ],
+  providers: [
+    SearchPipe
   ],
   bootstrap: [ AppComponent ]
 })

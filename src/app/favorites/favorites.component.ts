@@ -30,6 +30,7 @@ export class FavoritesComponent implements OnInit, OnDestroy {
       .subscribe(result => {
         this.friends = result;
         this.fillFavoriteFriends();
+        this.transferVarsService.setFriends(this.favoriteFriends);
       });
   }
 
