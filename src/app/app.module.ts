@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { FriendDetailComponent } from './friend-detail/friend-detail.component';
 import { FriendsListComponent } from './friends-list/friends-list.component';
 import { FavoritesComponent } from './favorites/favorites.component';
+import { StarsComponent } from './stars/stars.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FriendDetailComponent,
     FriendsListComponent,
-    FavoritesComponent
+    FavoritesComponent,
+    StarsComponent
   ],
   imports: [
     BrowserModule,

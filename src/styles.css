@@ -86,9 +86,9 @@ a:active {color:#fff;}
 
 /* Список друзей */
 ul.friends-list {
-	margin:0 0 12px 0;
-	padding:0 2px 2px 2px;
-	list-style-type:none;
+  margin:0 0 12px 0;
+  padding:0 2px 2px 2px;
+  list-style-type:none;
 }
 ul.friends-list>li {
   overflow:hidden;

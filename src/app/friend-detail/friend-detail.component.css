@@ -58,6 +58,15 @@
 .friend-card__cell_width-40 {
   width:40%;
 }
+.friend-card__cell_width-45 {
+  width:45%;
+}
+.friend-card__cell_width-50 {
+  width:50%;
+}
+.friend-card__cell_width-55 {
+  width:55%;
+}
 .friend-card__cell_width-60 {
   width:60%;
 }
