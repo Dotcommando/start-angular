@@ -11,7 +11,6 @@ export class FriendsService {
 
   public apiHost = './assets/generated.json';
 
-  // private friends: Observable<Friend[]>;
   private friends: Friend[];
 
   private observableFriends: Observable<Friend[]>;
@@ -23,21 +22,10 @@ export class FriendsService {
 
   getFriends(): Observable<Friend[]> {
     if (this.friends) {
-      console.log('Из кеша.');
       return of(this.friends);
     } else {
-      console.log('Из подписки.');
       return this.observableFriends;
     }
   }
-
-  // constructor(private http: HttpClient) {
-  //   this.friends = this.http.get(this.apiHost)
-  //     .pipe(map((friends: Friend[]) => friends));
-  // }
-  //
-  // getFriends(): Observable<Friend[]> {
-  //   return this.friends;
-  // }
 
 }

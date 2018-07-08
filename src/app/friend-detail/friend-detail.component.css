@@ -15,8 +15,8 @@
   background:#fff;
   opacity:.4;
   -webkit-box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.75);
-  -moz-box-shadow:    0 3px 15px 0 rgba(0, 0, 0, 0.75);
-  box-shadow:         0 3px 15px 0 rgba(0, 0, 0, 0.75);
+  -moz-box-shadow:0 3px 15px 0 rgba(0, 0, 0, 0.75);
+  box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.75);
   z-index:1;
 }
 .friend-card__row {
@@ -60,4 +60,30 @@
 }
 .friend-card__cell_width-60 {
   width:60%;
+}
+.friend-card__danger {
+  background:#d10c31;
+}
+.checkbox_fav {
+  position:relative;
+  width:80px;
+  height:36px;
+  text-align:center;
+}
+.checkbox_fav-right {
+  margin:0 0 0 auto;
+  position:relative;
+  left:28px;
+}
+.checkbox_fav input[type=checkbox] {
+  position:absolute;
+  left:-9999px;
+}
+.checkbox_fav input[type=checkbox] + label {
+  opacity:.2;
+  transition: opacity, color 300ms linear;
+}
+.checkbox_fav input[type=checkbox]:checked + label {
+  color:#4ce4e4;
+  opacity:1;
 }
