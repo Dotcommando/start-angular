@@ -1,0 +1,25 @@
+<div *ngIf="friend" class="friend-card">
+
+  <div class="friend-card__row">
+    <div class="friend-card__cell friend-card__cell_double friend-card__cell_ta-center">
+      <h2>{{ friend.name }}</h2>
+    </div>
+  </div>
+  <div class="friend-card__row">
+    <div class="friend-card__cell friend-card__cell_width-40 friend-card__cell_ta-right">
+      <span>ID:</span>
+    </div>
+    <div class="friend-card__cell friend-card__cell_width-60">
+      <span>{{ friend._id }}</span>
+    </div>
+  </div>
+  <div class="friend-card__row">
+    <div class="friend-card__cell friend-card__cell_width-40 friend-card__cell_ta-right">
+      <label for="friend-card__name">Имя:</label>
+    </div>
+    <div class="friend-card__cell friend-card__cell_width-60">
+      <input id="friend-card__name" type="text" [(ngModel)]="friend.name" placeholder="Имя друга"/>
+    </div>
+  </div>
+
+</div>
